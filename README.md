@@ -4,6 +4,8 @@ suitable for any type of Web Application.
 It has support for many features like swipe(current supported on Desktop Web Browsers),
 multiple effects(slide and fade), and more.
 
+See the demo at: https://vdiferente.000webhostapp.com/one-time-otslider
+
 ## Supported Web browsers
 - IE 8 or later;
 - Microsoft EDGE;
