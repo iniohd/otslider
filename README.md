@@ -51,18 +51,32 @@ otSlider.init({
 
 </pre>
 ### Configs Description
-<b>ID</b>: The ID of slider container. <i>[Default = ot-slider | Type = string]</i><br>
+<b>ID</b>: The ID of slider container. <b><i>[Default = ot-slider | Type = string]</i></b><br>
 .......................................<br>
 <b>direction(ltr|rtl)</b>: If set to ltr(default), the perform forward moviment or if is set to ltr,
-the slider perform backward movimento. <i>[Default = ltr | Type = string]</i><br>
+the slider perform backward movimento. <b><i>[Default = ltr | Type = string]</i></b><br>
 .......................................<br>
-<b>effect(slide|fade)</b>: Determine the effect that must be used by otSlider. <i>[Default = slide | Type = string]</i><br>
+<b>effect(slide|fade)</b>: Determine the effect that must be used by otSlider. <b><i>[Default = slide | Type = string]</i></b><br>
 .......................................<br>
-<b>prevButton</b>: The previous button of the slider. <i>[Default = see otSlider Configs section above | Type = string]</i><br>
+<b>prevButton</b>: The previous button of the slider. <b><i>[Default = see otSlider Configs section above | Type = string]</i></b><br>
 .......................................<br>
-<b<nextButton</b>: The next button of the slider. <i>[Default = see otSlider Configs section above | Type = string]</i><br>
+<b>nextButton</b>: The next button of the slider. <b><i>[Default = see otSlider Configs section above | Type = string]</i></b><br>
 .......................................<br>
-<b>duration</b>: The amount of time that each item/image is displayed before call another one
+<b>duration</b>: The amount of time in milliseconds that each item/image is displayed before call another one. <b><i>[Default = 1000(1 second) | Type = Integer(Number)]</i></b><br>
+.......................................<br>
+<b>effectDuration</b>: The amount of time in milliseconds that the effect takes. <b><i>[Default = 500(half of the second) | Type = Integer]</i></b><br>
+.......................................<br>
+<b>autoPlay(true|false)</b>: Determine if the slide should start play automatically or manually by clicking on buttons of the slider. <b><i>[Default = true | Type = boolean]</i></b><br>
+.......................................<br>
+<b>pauseOnHover(true|false)</b>: Determine if the slider must be pause while hover(put the mouse or finger on slider). <b><i>[Default = true | Type = boolean]</i></b><br>
+.......................................<br>
+<b>showPreNext(true|false)</b>: Detremine if both Prev and Next buttons must be displayed or not on slider. <b><i>[Default = true | Type = boolean]</i></b><br>
+.......................................<br>
+<b>showNav(true|false)</b>: Determine if the dots must be displayed or not on slider. <b><i>[Default = true | Type = boolean ]</i></b><br>
+.......................................<br>
+<b>swipeToSlide(true|false)</b>: Turn on/off the swipe actions. <b><i>[Default = true | Type = boolean ]</i></b><br>
+.......................................<br>
+<b>responsive(true|false)</b>: Determine if the slider must adapt it self to the screen which as dimensions lower than the specified dimensions of the slider. <b><i>[Default = true | Type = boolean]</i></b><br>
 </pre>
 
 ## Change Log
