@@ -46,17 +46,24 @@ otSlider.init({
   showPrevNext : true,
   showNav : true,
   swapeToSlide : true,
-  responsive : true,
+  responsive : true
 });
+
 </pre>
-
 ### Configs Description
-<b>ID</b>: The ID of slider container. <i>[Default = ot-slider | Type = string]</i>;<br>
-.......................................
-<b>direction</b>: If set to ltr(default), the perform forward moviment or if is set to ltr,
+<b>ID</b>: The ID of slider container. <i>[Default = ot-slider | Type = string]</i><br>
+.......................................<br>
+<b>direction(ltr|rtl)</b>: If set to ltr(default), the perform forward moviment or if is set to ltr,
 the slider perform backward movimento. <i>[Default = ltr | Type = string]</i><br>
-.......................................
-
+.......................................<br>
+<b>effect(slide|fade)</b>: Determine the effect that must be used by otSlider. <i>[Default = slide | Type = string]</i><br>
+.......................................<br>
+<b>prevButton</b>: The previous button of the slider. <i>[Default = see otSlider Configs section above | Type = string]</i><br>
+.......................................<br>
+<b<nextButton</b>: The next button of the slider. <i>[Default = see otSlider Configs section above | Type = string]</i><br>
+.......................................<br>
+<b>duration</b>: The amount of time that each item/image is displayed before call another one
+</pre>
 
 ## Change Log
 <b>Version 1.0(Beta 1)</b>
