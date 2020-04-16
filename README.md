@@ -16,7 +16,7 @@ See the demo at:https://vdiferente.000webhostapp.com/one-time-otslider
 - And many other Web Browsers.
 
 ## How to use otSlider
-Like many orders slider, you must download the zip file of this slider from here. After
+Like many other slider, you must download the zip file of this slider from here. After
 that, just uncompress/extract the folder inside the dowloaded zip file. Then upload it 
 to your site and call the two files inside the folder in the &lt;head&gt; tag section as following:
 
