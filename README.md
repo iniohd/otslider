@@ -7,7 +7,7 @@ multiple effects(slide and fade), and many more.
 See the demo at:https://vdiferente.000webhostapp.com/one-time-otslider
 
 ## Supported Web browsers
-- IE 8 or later;
+- Microsoft IE 8 or later;
 - Microsoft EDGE;
 - Mozilla Firefox;
 - Google Chrome;
@@ -39,8 +39,8 @@ otSlider.init({
   ID : 'ot-slider',
   direction: 'ltr',
   effect : 'slide',
-  prevButton : '<span class="prev"></span>',
-  nextButton : '<span class="next"></span>',
+  prevButton : '&lt;span class="prev"&gt;&lt;/span&gt;',
+  nextButton : '&lt;span class="next"&gt;&lt;/span&gt;',
   duration: 2000,
   effectDuration : 500,
   autoPlay : true,
