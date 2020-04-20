@@ -22,7 +22,7 @@ to your site and call the two files inside the folder in the &lt;head&gt; tag se
 <pre>
 &lt;head&gt;
 &lt;link rel="stylesheet" type="text/css" ref="https://yoursite.com/otslider/otslider.css" &gt;
-<br>
+
 &lt;script src="https://yoursite.com/otslider/otslider.js" &gt; &lt;/script&gt;
 &lt;/head&gt;
 </pre>
