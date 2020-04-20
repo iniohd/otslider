@@ -4,7 +4,7 @@ suitable for any type of Web Application.
 It has support for many features like swipe(current supported on Desktop Web Browsers only),
 multiple effects(slide and fade), and many more.
 
-See the demo at:https://vdiferente.000webhostapp.com/one-time-otslider
+
 
 ## Supported Web browsers
 - Microsoft IE 8 or later;
@@ -19,10 +19,13 @@ See the demo at:https://vdiferente.000webhostapp.com/one-time-otslider
 Like many other slider, you must download the zip file of this slider from here. After
 that, just uncompress/extract the folder inside the dowloaded zip file. Then upload it 
 to your site and call the two files inside the folder in the &lt;head&gt; tag section as following:
-
+<pre>
+&lt;head&gt;
 &lt;link rel="stylesheet" type="text/css" ref="https://yoursite.com/otslider/otslider.css" &gt;
 <br>
 &lt;script src="https://yoursite.com/otslider/otslider.js" &gt; &lt;/script&gt;
+&lt;/head&gt;
+</pre>
 
 ## How to initialize otSlider
 You can initialize otSlider from &lt;head&gt; or &lt;body&gt; tag by doing the following:
