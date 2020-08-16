@@ -1,0 +1,139 @@
+/*
+* OneTime Slider copyright 2018 - 2020 inioHD
+* Author: Herminio Orlando Machava
+* Author URL: https://github.com/inioHD
+*/
+
+.ot-slider,.ot-slider *{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+.ot-slider *::selection{
+	background:transparent;
+	color:transparent;
+}
+.ot-slider *::moz-selection{
+	background:transparent;
+	color:transparent;
+}
+.ot-slider{
+	position:relative;
+	width:768px;
+	height:340px;
+	color:#FFF;
+}
+.ot-slider .ot-items{
+	position:relative;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+.ot-slider .ot-items .ot-wrap{
+	position:relative;
+	height:100%;
+	-webkit-transform:translateZ(0);
+	-moz-transform:translateZ(0);
+	-o-transform:translateZ(0);
+	-ms-transform:translateZ(0);
+	transform:translateZ(0);
+}
+.ot-slider .ot-items .ot-item{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+.ot-slider .ot-items .ot-item img{
+	width:100%;
+	height:auto;
+}
+.ot-slider .ot-nav{
+	position:absolute;
+	width:100%;
+	left:0;
+	bottom:0;
+	background:transparent;
+	z-index:997;
+}
+.ot-slider .ot-nav ul{
+	list-style:none;
+	text-align:center;
+	padding:10px 0;
+}
+.ot-slider .ot-nav ul li{
+	display:inline-block;
+	width:10px;
+	height:10px;
+	background:#585858;
+	box-shadow:0 0 1px rgba(0,0,0,0.3);
+	color:#FFF;
+	cursor:pointer;
+	font-size:0.6em;
+	margin:2px;
+	padding:2px;
+	-webkit-transition:ease-out .2s background;
+	-moz-transition:ease-out .2s background;
+	transition:ease-out .2s background;
+}
+.ot-slider .ot-nav ul li.active{
+	background:#181818;
+}
+.ot-slider .ot-prev-next .ot-prev-button,.ot-slider .ot-prev-next .ot-next-button{
+	position:absolute;
+	display:block;
+	width:40px;
+	height:60px;
+	left:0;
+	top:50%;
+	background:#585858;
+	background:rgba(58,58,58,0.4);
+	cursor:pointer;
+	font-size:1em;
+	margin-top:-22px;
+	text-align:center;
+	-webkit-transition:ease-out .2s background;
+	-moz-transition:ease-out .2s background;
+	transition:ease-out .2s background;
+	z-index:998;
+}
+.ot-slider .ot-prev-next .ot-next-button{
+	left:auto;
+	right:0;
+}
+.ot-slider .ot-prev-next .ot-prev-button:hover,
+.ot-slider .ot-prev-next .ot-next-button:hover{
+	background:#181818;
+}
+/*round slider buttons*/
+.ot-slider.ot-slider-round-buttons .ot-prev-next .ot-prev-button,
+.ot-slider.ot-slider-round-buttons .ot-prev-next .ot-next-button{
+	border-radius:50%!important;
+	width:50px!important;
+	height:50px!important;
+	font-size:1.2em;
+}
+.ot-slider.ot-slider-round-buttons .ot-prev-next .ot-prev-button{
+	margin-left:10px!important;
+}
+.ot-slider.ot-slider-round-buttons .ot-prev-next .ot-next-button{
+	margin-right:10px!important;
+}
+.ot-slider .ot-prev-next [class*=wrap-outer]{
+	display:table;
+	width:100%;
+	height:100%;
+}
+.ot-slider .ot-prev-next [class*=wrap-inner]{
+	display:table-cell;
+	vertical-align:middle;
+}
+.ot-slider.ot-slider-round-buttons .ot-nav ul li{
+	border-radius:50%!important;
+}
+/*Numeric Navigation*/
+.ot-slider.ot-slider-numeric-nav .ot-nav ul li{
+	width:15px;
+	height:15px;
+}
