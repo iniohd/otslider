@@ -1,0 +1,25 @@
+[[ otSlider Changelog ]]
+    [ v2.0.0 ]:
+        - The responsive features was significantly improved.
+        - Added 6 new elements to the optional configs object (itemsToShow, itemsScrollBy, padding, teasing, centered, swipeFreely).
+        - The swipe feature was rewriten.
+        - The "slide" transition for old Web Browsers that doesn't support CSS3 transition, was rewriten.
+        - Fixed the issue that was prevent otSlider to swipe to the left when multiple instances initialized.
+        - The file size was slightly reduced. Thanks to the rewrite of some features.
+        - Bugs fixes.
+    ___________________________________________________________
+
+    [ v1.1.0 ]:
+        - Now OTSlider is called as constructor. But still mandatory to call init() method to initialise the slider.
+        - Added new elements to the optional configs object (transitionTiming, roundButtons, numericNav).
+        - "swipeToSlide" element renamed to "swipe", on optional configs object.
+        - "effect" element renamed to "transition", on optional configs object.
+        - "effectDuration" element renamed to "transitionDuration", on optional configs object.
+        - Transition improved smoothness.
+        - Added full support to swipe events for both devices (desktop and mobile) and for both transitions (slide and fade).
+        - Version control changed from two to three numbers.
+        - Bugs fixes.
+    ___________________________________________________________
+
+    [ v1.0 (beta 1) ]:
+        - Initial public release.
