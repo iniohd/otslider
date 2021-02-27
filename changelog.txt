@@ -1,4 +1,12 @@
 [[ otSlider Changelog ]]
+    [ v2.1.0 ]:
+        - Fixed the issue that was ocasionally positionate incorrectelly the last items displayed, on "slide" transition after swipe, when "itemsToShow" is higher than 1.
+        - Fixed the issue that was ocasionally cause otSlider to not load. [Reported by Mark]
+        - The default width and height values were removed from optional configs object. If the width is not specified, otSlider will set it to be the same as its parent element. While if the height is not specified, it will be determined by items' height (images' height, etc.).
+        - Changed the default arrows on previous and next buttons to "&#10093;" and "&#10094" unicodes respectively.
+        - Bugs fixes.
+    ___________________________________________________________
+
     [ v2.0.0 ]:
         - The responsive features was significantly improved.
         - Added 6 new elements to the optional configs object (itemsToShow, itemsScrollBy, padding, teasing, centered, swipeFreely).

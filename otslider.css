@@ -1,5 +1,5 @@
 /*
-* (c) otSlider  2018 - 2020 inioHD
+* (c) 2018 - 2021 inioHD
 * Author: Herminio Machava
 * Author URL: https://github.com/inioHD
 */
@@ -19,14 +19,12 @@
 }
 .ot-slider{
 	position:relative;
-	width:768px;
-	height:340px;
 	color:#FFF;
 }
 .ot-slider .ot-items{
 	position:relative;
 	width:100%;
-	height:100%;
+	height:inherit;
 	overflow:hidden;
 }
 .ot-slider .ot-items .ot-wrap{
@@ -39,10 +37,14 @@
 	transform:translateZ(0);
 }
 .ot-slider .ot-items .ot-item{
-	position:absolute;
-	width:100%;
-	height:100%;
 	overflow:hidden;
+}
+.ot-slider.ot-slide-transition .ot-items .ot-item{
+	display:inline-block;
+	vertical-align:top;
+}
+.ot-slider.ot-fade-transition .ot-items .ot-item{
+	position:absolute;
 }
 .ot-slider .ot-items .ot-item img{
 	width:100%;
@@ -66,7 +68,7 @@
 	width:10px;
 	height:10px;
 	background:#585858;
-	box-shadow:0 0 1px rgba(0,0,0,0.3);
+	box-shadow:0 0 1px rgba(0, 0, 0, 0.3);
 	color:#FFF;
 	cursor:pointer;
 	font-size:0.6em;
@@ -81,7 +83,7 @@
 .ot-slider .ot-nav ul li.active{
 	background:#181818;
 }
-.ot-slider .ot-prev-next .ot-prev-button,.ot-slider .ot-prev-next .ot-next-button{
+.ot-slider .ot-prev-next .ot-prev-button, .ot-slider .ot-prev-next .ot-next-button{
 	position:absolute;
 	display:block;
 	width:40px;
@@ -89,9 +91,10 @@
 	left:0;
 	top:50%;
 	background:#585858;
-	background:rgba(58,58,58,0.4);
+	background:rgba(58, 58, 58, 0.4);
 	cursor:pointer;
-	font-size:1em;
+	font-size:1.1em;
+	font-weight:600;
 	margin-top:-22px;
 	text-align:center;
 	-ms-transition:ease-out .2s background;

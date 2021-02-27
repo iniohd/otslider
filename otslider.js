@@ -1,11 +1,12 @@
 /*
-* (c) otSlider 2018 - 2020 inioHD
+* (c) 2018 - 2021 inioHD
 * Author: Herminio Machava
 * Author URL: https://github.com/iniohd
 * URL: https://iniohd.github.io/otslider.html
-* Version: 2.0.0
+* Version: 2.1.0
 * License: MIT
 */
+
 function OTSlider(){
 	"use strict";
 
@@ -41,8 +42,8 @@ function OTSlider(){
 			direction: 'ltr',
 			transition : 'slide',
 			transitionTiming: "ease",
-			prevButton : '&laquo;',
-			nextButton : '&raquo;',
+			prevButton : '&#9001;',
+			nextButton : '&#9002;',
 			duration: 2000,
 			transitionDuration : 500,
 			itemsToShow : 1,
@@ -177,9 +178,17 @@ function OTSlider(){
 			}
 
 			if(window.addEventListener){
-				document.addEventListener("DOMContentLoaded", loaded, false);
+				document.addEventListener("readystatechange", function(){
+					if(document.readyState.toLowerCase() !== "loading" && !ots.slider){
+						loaded();
+					}
+				});
 			}else{
-				document.attachEvent("onreadystatechange", loaded);
+				document.attachEvent("onreadystatechange", function(){
+					if(document.readyState.toLowerCase() !== "loading" && !ots.slider){
+						loaded();
+					}
+				});
 			}
 		},
 		
@@ -191,7 +200,7 @@ function OTSlider(){
 			this.gecn(document.body, b)[0];
 
 			if(!e){
-				throw new Error("Element not found. Please specify an valid"+
+				throw new Error("Element not found. Please specify an valid" +
 				" HTML element or specify its class name or ID.");
 			}
 			
@@ -200,6 +209,8 @@ function OTSlider(){
 			
 			//Add the required class attribute in order to style the slide
 			this.acn(e, this.slideClass);
+			
+			e.setAttribute("data-running", "true");
 			
 			//Only set the width or height if it was specified
 			if(this.configs.width)
@@ -238,13 +249,12 @@ function OTSlider(){
 			
 			while(v[0]){
 				if(v[0].nodeType == 1){
-					if(v[0].nodeName.toLowerCase() !== "div"){
+					if(v[0].nodeName.toLowerCase() == "img"){
 						z = document.createElement("div");
 						
 						z.className = this.itemClass+' ot-item-' + i;
 						
-						z.innerHTML = '<img src="'+v[0].src+'" alt="'+
-						v[0].alt+'" draggable="false">';
+						z.innerHTML = '<img src="'+ v[0].src +'" alt="'+ v[0].alt +'" draggable="false">';
 						
 						x[i] = z;
 					}else{
@@ -281,6 +291,8 @@ function OTSlider(){
 			
 			//Finaly let's append the container with its children
 			s.appendChild(w);
+
+			this.acn(s, "ot-" + this.configs.transition + "-transition");
 		},
 		
 		setupNavs : function(){
@@ -293,6 +305,7 @@ function OTSlider(){
 			//Previous and next Buttons
 			v = e[0];
 			v.className = this.prevNextClass;
+			v.style.display = "none";
 
 			pb = document.createElement("span");
 			pb.className = "ot-prev-button";
@@ -310,6 +323,7 @@ function OTSlider(){
 			//Navigation buttons
 			w = e[1];
 			w.className = this.navClass;
+			w.style.display = "none";
 			
 			//Get slider's container
 			s = this.slider;
@@ -424,23 +438,28 @@ function OTSlider(){
 
 			t = this.configs.teasing / its;
 
+			//if((this.isStartUp && !this.configs.width) || pw < this.configs.width){
+				//this.configs.width = pw;
+			//}
+
 			//Get the demension of the slider
-			dw = sw = (this.configs.width) ? this.configs.width : 768;
+			dw = sw = (this.configs.width) ? this.configs.width : pw;
 
-			dh = sh = (this.configs.height) ? this.configs.height : 320;
+			dh = sh = (this.configs.height) ? this.configs.height : null;
 
-			//Get the diference between the dafault width and the current one.
+			//Get a lower width between the dafault width and the current one.
 			wd = Math.min(pw, dw);
 
 			//Verify if the slider must be responsive or not.
 			if(this.configs.responsive){
-				//If the specified width is higher than the window. We set it to
-				//be same as the window.
+				//If the specified width is higher than the window or slider's parent element. We
+				//set it to be the same as window's or parent's width.
 				sw = Math.min(sw, pw);
 
 				//Determine the apropriate height of the slider according to
 				//the current slider's width.
-				sh = (dh / dw) * wd;
+				if("number" === typeof sh)
+					sh = (dh / dw) * wd;
 
 				if(pw <= wd){
 					s.style.width = "100%";
@@ -453,7 +472,8 @@ function OTSlider(){
 					//Set the width for slider
 					s.style.width = (sw == pw) ? "100%" : sw + "px";
 
-					s.style.height = sh + "px";
+					if(sh)
+						s.style.height = sh + "px";
 
 					iw = sw / its - t;
 
@@ -469,10 +489,9 @@ function OTSlider(){
 					//alongside another.
 					for(var i = 0; i < b.length; i++){
 						b[i].style.width = iw + "px";
-
-						b[i].style.height = sh + "px";
-
-						b[i].style.left = (iw * i) + "px";
+						
+						if(sh)
+							b[i].style.height = sh + "px";
 
 						if(ip > 0)
 							b[i].style.padding = "0 " + ip + "px";
@@ -487,18 +506,71 @@ function OTSlider(){
 
 				s.style.width = sw == pw ? "100%" : sw + "px";
 
+				if(!sh && f || !sh)
+					sh = this.getItemsHeight(false, true);
+
 				s.style.height = sh + "px";
 
 				for(var i = 0; i < b.length; i++){
 					b[i].style.width = sw + "px";
-
-					b[i].style.height = sh + "px";
 				}
 			}
 		},
+
+		getItemsHeight : function(asArray, descOrder){
+			asArray = ("boolean" === typeof asArray) ? asArray : true;
+
+			descOrder = ("boolean" === typeof descOrder) ? descOrder : false;
+
+			var ots = OTSlider, a = [], b;
+
+			b = ots.gecn(ots.slider, ots.itemClass);
+
+			for(var i = 0; i < b.length; i++){
+				a.push(b[i].offsetHeight);
+			}
+
+			if(descOrder){
+				a.sort(function(a, b){
+					return b - a;
+				});
+			}
+
+			return (asArray) ? a : a[0];
+		},
+
+		updateSliderHeight : function(x){
+			var ots = OTSlider
+			
+		//Only update the height if it was not specified
+		if(!ots.configs.height)
+			ots.setupDimensions(true);
+			
+			ots.showNavs();
+		},
 		
+		showNavs : function(){
+			var ots = OTSlider, nav, pn;
+			
+			//Get the container of previous and next buttons
+			pn = ots.gecn(ots.slider, ots.prevNextClass);
+			
+			//Get the container of nav elements
+			nav = ots.gecn(ots.slider, ots.navClass);
+			
+			if(ots.configs.showPrevNext){
+				if(pn && pn.length)
+					ots.toggleInlineStyle(pn[0], "display", "block");	
+			}
+			
+			if(ots.configs.showNav){
+				if(nav && nav.length)
+					ots.toggleInlineStyle(nav[0], "display", "block");				
+			}
+		},
+
 		addEvents : function(){
-			var a, b, c, d, e, s, ots;
+			var a, b, c, d, e, il, s, ots;
 			
 			ots = OTSlider;
 			
@@ -516,7 +588,7 @@ function OTSlider(){
 			//Get the previous and next buttons
 			d = c.children;
 
-			e = this.gecn(s, "ot-items");
+			e = this.gecn(s, this.itemsClass);
 			
 			if(window.addEventListener){
 				s.addEventListener("mouseout", function(e){
@@ -596,6 +668,17 @@ function OTSlider(){
 				window.attachEvent("onresize", function(){
 					ots.resizeHandler();});
 			}
+
+			//Get items' list
+			il = this.gecn(s, this.itemClass);
+
+			for(var i = 0; i < il.length; i++){
+				if(il[i].getElementsByTagName("img")[0]){
+					il[i].getElementsByTagName("img")[0].onload = function(){
+						ots.updateSliderHeight(this);
+					};
+				}
+			}
 		},
 		
 		toggleInlineStyle : function(e, p, pv){
@@ -620,8 +703,8 @@ function OTSlider(){
 				
 				for(var i = 0; i < a.length; i++){
 					b = a[i].split(":");
-				
-					if(b[0].replace(/(\s|\s\s)+/gi, "") !== p){
+					
+					if(b[0].replace(/(\s|\s\s)+/gi, "") !== p && b[1]){
 						c = c + b[0] +":"+ b[1] +";";
 					}
 				}
@@ -1325,6 +1408,13 @@ function OTSlider(){
 						targetLeft -= (b[c + its]) ? a / 2 : 0;
 					else
 						targetLeft += (b[c + its]) ? a / 2 : 0;
+
+					/*
+					* Prevent the target left position to be higher than the total width of all
+					* items, minus the current width of the slider.
+					*/
+					if(Math.abs(targetLeft) > (this.totalItemsWidth - this.slider.offsetWidth))
+						targetLeft = this.totalItemsWidth - this.slider.offsetWidth;
 				}
 			}
 

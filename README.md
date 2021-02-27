@@ -1,5 +1,5 @@
 # otslider
-otSlider (OneTime Slider) is a powerful and intuitive slider built from plain/vanilla JS, which is
+OneTime Slider(otSlider) is a powerful and intuitive slider built from plain/vanilla JS, which is
 suitable for any kind of Web Application.
 It has support for many features like swipe, multiple transitions (slide and fade), and many other features.
 
