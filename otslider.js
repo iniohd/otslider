@@ -37,7 +37,7 @@ function OTSlider() {
 		itemStartPosition : [],
 		itemEndPosition : [],
 		
-		configs : {
+		configs: {
 			element : 'ot-slider',
 			direction: 'ltr',
 			transition : 'slide',
