@@ -7,7 +7,7 @@
 * License: MIT
 */
 
-function OTSlider(){
+function OTSlider() {
 	"use strict";
 
 	var sliderInstID = 0;
