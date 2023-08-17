@@ -1,5 +1,5 @@
 /*
-* (c) 2018 - 2021 inioHD
+* (c) 2018 - 2023 inioHD
 * Author: Herminio Machava
 * Author URL: https://github.com/iniohd
 * URL: https://iniohd.github.io/otslider.html
