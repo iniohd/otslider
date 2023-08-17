@@ -1,0 +1,52 @@
+<!--
+* On this page I show you how to easly initial otSlider with deafult options (configs).
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Initialze otSlider with default configs</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <meta name="keywords" content="otSlider, carousel, iniohd, example" />
+        <link rel="stylesheet" type="text/css" href="../otslider.css">
+        <script src="../otslider.js"></script>
+        <style>
+            *, *::before, *::after {
+                box-sizing:border-box;
+            }
+            html, body {
+                font-size:100%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            body {
+                border:0;
+                margin:0;
+                padding:0;
+                color:#333;
+            }
+            .my-slider .ot-item {
+                height:10rem;
+                padding:2rem;
+                background:#e4f1ec;
+                color:#222;
+                font-size:3rem;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="my-slider"><!--slider container-->
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div><!--.slider container-->
+        <script>
+            var otslider = new OTSlider();
+            otslider.init({
+                element: "my-slider"// You can also specify the element itself instead.
+                //For more options, refer to the documentation at: https://iniohd.github.io/otslider.html
+            });
+        </script>
+    </body>
+</html>
