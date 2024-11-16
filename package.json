@@ -1,0 +1,36 @@
+{
+  "name": "otslider",
+  "version": "3.0.0",
+  "description": "otSlider (OneTime Slider) is a powerful and intuitive open source slider built from plain/vanilla Javascript, which is suitable for any kind of Web Application",
+  "main": "otslider.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iniohd/otslider.git"
+  },
+  "keywords": [
+    "slider",
+    "carousel",
+    "javascript",
+    "typescript",
+    "otslider",
+    "open-source",
+    "free",
+    "fade",
+    "slide",
+    "mobile",
+    "responsive"
+  ],
+  "author": "iniohd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iniohd/otslider/issues"
+  },
+  "homepage": "https://github.com/iniohd/otslider#readme",
+  "target": "ES6"
+}
