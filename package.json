@@ -1,6 +1,6 @@
 {
   "name": "otslider",
-  "version": "3.0.0",
+  "version": "3.0.0-alpha",
   "description": "otSlider (OneTime Slider) is a powerful and intuitive open source slider built from plain/vanilla Javascript, which is suitable for any kind of Web Application",
   "main": "otslider.js",
   "directories": {
@@ -31,6 +31,5 @@
   "bugs": {
     "url": "https://github.com/iniohd/otslider/issues"
   },
-  "homepage": "https://github.com/iniohd/otslider#readme",
-  "target": "ES6"
+  "homepage": "https://github.com/iniohd/otslider#readme"
 }
